@@ -1,0 +1,22 @@
+﻿{
+  "Roles": [
+    "User",
+    "Admin"
+  ],
+  "Users": [
+    {
+      "Id": "0032d723-6d22-4a26-afa9-e72f2cfb47ec",
+      "Email": "user@test.test",
+      "Password": "123QWqw!",
+      "Role": "User",
+      "Status": 1
+    },
+    {
+      "Id": "952a9eae-500e-41b5-a102-b88d02b40fb9",
+      "Email": "admin@test.test",
+      "Password": "123QWqw!",
+      "Role": "Admin",
+      "Status": 1
+    }
+  ]
+}

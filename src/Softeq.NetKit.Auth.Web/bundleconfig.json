@@ -1,0 +1,23 @@
+[
+  {
+    "outputFileName": "wwwroot/scripts/bundle-jquery.js",
+    "inputFiles": [
+      "wwwroot/scripts/jquery.js",
+      "wwwroot/scripts/jquery.validate.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  },
+  {
+    "outputFileName": "wwwroot/styles/bundle.css",
+    "inputFiles": [
+      "wwwroot/styles/bootstrap.css"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    }
+  }
+]

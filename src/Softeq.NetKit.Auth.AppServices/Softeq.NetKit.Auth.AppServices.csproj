@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.1.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Softeq.NetKit.Auth.Common.EmailTemplates\Softeq.NetKit.Auth.Common.EmailTemplates.csproj" />
+    <ProjectReference Include="..\EDC\Softeq.NetKit.Auth.Integration.Edc\Softeq.NetKit.Auth.Integration.Edc.csproj" />
+    <ProjectReference Include="..\Softeq.NetKit.Auth.Common.Utility\Softeq.NetKit.Auth.Common.Utility.csproj" />
+    <ProjectReference Include="..\Softeq.NetKit.Auth.DomainServices.Interfaces\Softeq.NetKit.Auth.DomainServices.Interfaces.csproj" />
+    <ProjectReference Include="..\Softeq.NetKit.Auth.Domain\Softeq.NetKit.Auth.Domain.csproj" />
+    <ProjectReference Include="..\Integration\Softeq.NetKit.Auth.Integration.Email\Softeq.NetKit.Auth.Integration.Email.csproj" />
+  </ItemGroup>
+
+</Project>

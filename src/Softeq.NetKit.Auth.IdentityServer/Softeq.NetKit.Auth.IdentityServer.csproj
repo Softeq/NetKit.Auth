@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Softeq.NetKit.Auth.IdentityServer</AssemblyName>
+    <RootNamespace>Softeq.NetKit.Auth.IdentityServer</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IdentityServer4" Version="2.3.2" />
+    <PackageReference Include="IdentityServer4.AspNetIdentity" Version="2.3.0" />
+    <PackageReference Include="IdentityServer4.EntityFramework" Version="2.3.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Softeq.NetKit.Auth.AppServices\Softeq.NetKit.Auth.AppServices.csproj" />
+    <ProjectReference Include="..\Softeq.NetKit.Auth.Common.Utility\Softeq.NetKit.Auth.Common.Utility.csproj" />
+    <ProjectReference Include="..\Softeq.NetKit.Auth.DomainServices.Interfaces\Softeq.NetKit.Auth.DomainServices.Interfaces.csproj" />
+    <ProjectReference Include="..\Softeq.NetKit.Auth.Domain\Softeq.NetKit.Auth.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

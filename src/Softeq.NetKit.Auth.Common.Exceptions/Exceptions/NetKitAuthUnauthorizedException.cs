@@ -1,0 +1,25 @@
+﻿// Developed by Softeq Development Corporation
+// http://www.softeq.com
+
+using System;
+
+namespace Softeq.NetKit.Auth.Common.Exceptions.Exceptions
+{
+    public class NetKitAuthUnauthorizedException : NetKitAuthException
+    {
+        public NetKitAuthUnauthorizedException(ErrorCode errorCode)
+            : base(errorCode)
+        {
+        }
+
+        public NetKitAuthUnauthorizedException(ErrorCode errorCode, string message)
+            : base(errorCode, message)
+        {
+        }
+
+        public NetKitAuthUnauthorizedException(ErrorCode errorCode, string message, Exception innerException)
+            : base(errorCode, message, innerException)
+        {
+        }
+    }
+}

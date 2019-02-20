@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Softeq.NetKit.Auth.Repository.Interfaces\Softeq.NetKit.Auth.Repository.Interfaces.csproj" />
+    <ProjectReference Include="..\Softeq.NetKit.Auth.SQLRepository\Softeq.NetKit.Auth.SQLRepository.csproj" />
+  </ItemGroup>
+
+</Project>

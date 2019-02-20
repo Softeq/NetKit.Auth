@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <RootNamespace>Softeq.NetKit.Auth.Jobs.Edc</RootNamespace>
+    <AssemblyName>Softeq.NetKit.Auth.Jobs.Edc</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="4.3.1" />
+    <PackageReference Include="Microsoft.Azure.WebJobs" Version="3.0.4" />
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Softeq.NetKit.Auth.Common.EmailTemplates\Softeq.NetKit.Auth.Common.EmailTemplates.csproj" />
+    <ProjectReference Include="..\..\Common\Softeq.NetKit.Auth.Common.Logger\Softeq.NetKit.Auth.Common.Logger.csproj" />
+    <ProjectReference Include="..\..\EDC\Softeq.NetKit.Auth.Integration.Edc\Softeq.NetKit.Auth.Integration.Edc.csproj" />
+    <ProjectReference Include="..\..\Softeq.NetKit.Auth.SQLRepository\Softeq.NetKit.Auth.SQLRepository.csproj" />
+    <ProjectReference Include="..\..\Integration\Softeq.NetKit.Auth.Integration.Email\Softeq.NetKit.Auth.Integration.Email.csproj" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<None Update="appsettings.Development.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<DependentUpon>appsettings.json</DependentUpon>
+		</None>
+		<None Update="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+		<None Update="Run.cmd">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+</Project>
