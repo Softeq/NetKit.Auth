@@ -19,7 +19,7 @@ namespace Softeq.NetKit.Auth.Web.Utility
 		public const string AzureServiceBusSubscriptionClientName = "AzureServiceBus:SubscriptionName";
 		public const string AzureServiceBusTopicClientName = "AzureServiceBus:TopicName";
 
-		public const string DatabaseConnectionString = "ConnectionStrings:DefaultConnection";
+		public const string DatabaseConnectionString = "Database:ConnectionString";
 
 		public const string DataProtectorProviderName = "DataProtectorTokenProvider:Options:Name";
 		public const string DataProtectorProviderTokenLifespan = "DataProtectorTokenProvider:Options:TokenLifespan";

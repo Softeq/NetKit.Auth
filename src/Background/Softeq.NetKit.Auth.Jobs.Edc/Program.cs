@@ -59,8 +59,7 @@ namespace Softeq.NetKit.Auth.Jobs.Edc
 
                     services.AddSingleton<INameResolver, ConfigExpressionNameResolver>(_ => new ConfigExpressionNameResolver(context.Configuration));
 
-                    services.AddDbContext<IntegrationEventLogContext>(options =>
-                        options.UseSqlServer(context.Configuration.GetConnectionString("DefaultConnection")));
+                    services.AddDbContext<IntegrationEventLogContext>(options => options.UseSqlServer(context.Configuration["Database:ConnectionString"]));
 
                     var builder = new ContainerBuilder();
                     builder.Populate(services);

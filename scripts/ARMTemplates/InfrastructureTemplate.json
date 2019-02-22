@@ -269,15 +269,30 @@
           ],
           "properties": {
             "ApplicationInsights:InstrumentationKey": "[reference(resourceId('Microsoft.Insights/components', variables('appInsightsName')), '2014-04-01').InstrumentationKey]",
-            "AzureWebJobsDashboard": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccount'),';AccountKey=',concat(listKeys(variables('storageAccountId'),'2015-06-15').key1))]",
-            "ConnectionStrings:AzureWebJobsStorage": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccount'),';AccountKey=',concat(listKeys(variables('storageAccountId'),'2015-06-15').key1))]",
-            "ConnectionStrings:DefaultConnection": "[concat('Data Source=tcp:', reference(concat('Microsoft.Sql/servers/', variables('sqlServerName'))).fullyQualifiedDomainName, ',1433;Initial Catalog=', variables('sqlDatabaseName'), ';User Id=', parameters('sqlServerAdminLogin'), ';Password=', parameters('sqlServerAdminPassword'), ';Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Max Pool Size=300;')]",
             "AuthApiUrlConfiguration:ApiUrl": "[concat('https://', reference(resourceId('Microsoft.Web/sites', variables('webAppSiteName'))).hostNames[0])]",
             "SendGrid:APIKey": "[parameters('SendGridApiKey')]",
             "AzureServiceBus:ConnectionString" : "[listkeys(variables('serviceBusAuthRuleResourceId'), '2017-04-01').primaryConnectionString]",
             "AzureServiceBus:TopicName" : "[parameters('serviceBusEdcTopicName')]",
             "AzureServiceBus:QueueName" : "[parameters('serviceBusEdcQueueName')]",
             "AzureServiceBus:SubscriptionName" : "[parameters('serviceBusEdcSubscriptionName')]"
+          }
+        },
+        {
+          "apiVersion": "2015-08-01",
+          "type": "config",
+          "name": "connectionstrings",
+          "dependsOn": [
+            "[concat('Microsoft.Web/Sites/', variables('webAppSiteName'))]"
+          ],
+          "properties": {
+            "AzureWebJobsStorage": {
+              "value" : "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccount'),';AccountKey=',concat(listKeys(variables('storageAccountId'),'2015-06-15').key1))]",
+              "type" : "Custom"
+            },
+            "AzureWebJobsDashboard": {
+              "value" : "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccount'),';AccountKey=',concat(listKeys(variables('storageAccountId'),'2015-06-15').key1))]",
+              "type" : "Custom"
+            }
           }
         },
         {
