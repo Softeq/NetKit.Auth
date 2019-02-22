@@ -268,6 +268,7 @@
             "[concat('Microsoft.Web/Sites/', variables('webAppSiteName'))]"
           ],
           "properties": {
+            "Database:ConnectionString": "[concat('Data Source=tcp:', reference(concat('Microsoft.Sql/servers/', variables('sqlServerName'))).fullyQualifiedDomainName, ',1433;Initial Catalog=', variables('sqlDatabaseName'), ';User Id=', parameters('sqlServerAdminLogin'), ';Password=', parameters('sqlServerAdminPassword'), ';Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;Max Pool Size=300;')]",
             "ApplicationInsights:InstrumentationKey": "[reference(resourceId('Microsoft.Insights/components', variables('appInsightsName')), '2014-04-01').InstrumentationKey]",
             "AuthApiUrlConfiguration:ApiUrl": "[concat('https://', reference(resourceId('Microsoft.Web/sites', variables('webAppSiteName'))).hostNames[0])]",
             "SendGrid:APIKey": "[parameters('SendGridApiKey')]",
