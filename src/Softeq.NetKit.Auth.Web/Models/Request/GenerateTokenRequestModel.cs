@@ -16,5 +16,7 @@ namespace Softeq.NetKit.Auth.Web.Models.Request
         public string Client_id { get; set; }
 
         public string Client_secret { get; set; }
+
+        public string Refresh_token { get; set; }
     }
 }
