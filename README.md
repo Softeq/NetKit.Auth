@@ -1,4 +1,4 @@
-![Azure DevOps builds](https://img.shields.io/azure-devops/build/SofteqDevelopment/NetKit/20.svg)
+![Azure DevOps builds](https://dev.azure.com/SofteqDevelopment/NetKit/_apis/build/status/Auth/Auth-CI-Build)
 
 # Softeq.Netkit.Auth
 
