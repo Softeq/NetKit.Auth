@@ -2,6 +2,8 @@
 
 # Softeq.Netkit.Auth
 
+Open source product is used to communicate people in real time. 
+This project uses ASP.NET Core 2.2
 
 ## About
 
@@ -35,6 +37,41 @@ Initially, there are created 2 default roles and users in the database:
 ```
 
 To change initial data edit SeedValues.json file
+
+## Use
+
+To receive access and refresh token by user credentials send the following request:
+POST /connect/token
+```csharp
+var values = new Dictionary<string, string>
+{
+	{ "grant_type", "password" },
+	{ "password", "userPassword" },
+	{ "username", "userName" },
+	{ "scope", "offline_access" },
+	{ "client_id", "clientId" },
+	{ "client_secret", "clientSecret" }
+};
+
+var content = new FormUrlEncodedContent(values);
+var response = await httpClient.PostAsync($"{authServerUrl}/connect/token", content);
+```
+
+To receive access and refresh token by refresh token send the following request:
+POST /connect/token
+```csharp
+var values = new Dictionary<string, string>
+{
+	{ "grant_type", "refresh_token" },
+	{ "scope", "offline_access" },
+	{ "client_id", "clientId" },
+	{ "client_secret", "clientSecret" },
+	{ "refresh_token", "refreshToken" }
+};
+
+var content = new FormUrlEncodedContent(values);
+var response = await httpClient.PostAsync($"{authServerUrl}/connect/token", content);
+```
 
 ## Contributing
 

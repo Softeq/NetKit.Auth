@@ -52,7 +52,11 @@ namespace Softeq.NetKit.Auth.IdentityServer
                     {
                         new Secret("secret".Sha256())
                     },
-                    AllowedScopes = {"api"},
+                    AllowedScopes =
+                    {
+                        IdentityServerConstants.StandardScopes.OfflineAccess,
+                        "api"
+                    },
 					AccessTokenLifetime = ClientCredentialsAccessTokenLifeTime
 				},
                 // resource owner password grant client
