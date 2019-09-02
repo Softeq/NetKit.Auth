@@ -15,5 +15,6 @@ namespace Softeq.NetKit.Auth.Repository.Interfaces.Repositories
 	    Task<IEnumerable<User>> GetUsersWhosePasswordExpiresAsync(int expirationTimeInDays);
 	    Task<User> GetUserByNameAsync(string userName);
         Task<User> GetFirstRoleRepresentativeAsync(string role);
+        Task<User> GetUserByAppleKeyAsync(string appleKey);
     }
 }

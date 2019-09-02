@@ -25,5 +25,6 @@ namespace Softeq.NetKit.Auth.Domain.Models.User
 		public virtual ICollection<UserRole> UserRoles { get; set; }
 		public virtual ICollection<PasswordHistory> Passwords { get; set; }
         public virtual DeletedUserInfo DeletedUserInfo { get; set; }
+        public string AppleKey { get; set; }
     }
 }

@@ -70,5 +70,12 @@ namespace Softeq.NetKit.Auth.Web.Utility
 		public const string ServiceBusErrorEmail = "EmailTemplates:ServiceBusErrorEmail";
 
 	    public const string MobileConfigurationIosConfirmEmailRedirectUrl = "MobileConfiguration:IosConfirmEmailRedirectUrl";
+
+        public const string ClientId = "AppleHttpClientConfiguration:ClientId";
+        public const string RedirectUri = "AppleHttpClientConfiguration:RedirectUri";
+        public const string KeyId = "AppleHttpClientConfiguration:KeyId";
+        public const string TeamId = "AppleHttpClientConfiguration:TeamId";
+        public const string Lifetime = "AppleHttpClientConfiguration:Lifetime";
+        public const string PrivateKey = "AppleHttpClientConfiguration:PrivateKey";
     }
 }

@@ -92,6 +92,7 @@ namespace Softeq.NetKit.Auth.SQLRepository.Migrations
                     LastPasswordChangedDate = table.Column<DateTimeOffset>(nullable: true),
                     LastPasswordExpiredEmailSentDate = table.Column<DateTimeOffset>(nullable: true),
                     LastPasswordExpiresEmailSentDate = table.Column<DateTimeOffset>(nullable: true),
+                    AppleKey = table.Column<string>(nullable: true),
                     LastAccountFailedAttemptsEmailSentDate = table.Column<DateTimeOffset>(nullable: true)
                 },
                 constraints: table =>

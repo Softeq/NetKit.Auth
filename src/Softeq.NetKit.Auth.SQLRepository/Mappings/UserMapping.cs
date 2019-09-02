@@ -21,6 +21,7 @@ namespace Softeq.NetKit.Auth.SQLRepository.Mappings
 	        builder.Property(u => u.LastPasswordExpiredEmailSentDate).IsRequired(false);
 	        builder.Property(u => u.LastPasswordExpiresEmailSentDate).IsRequired(false);
 	        builder.Property(u => u.LastAccountFailedAttemptsEmailSentDate).IsRequired(false);
+            builder.Property(u => u.AppleKey).IsRequired(false);
 
 			builder.HasOne(u => u.DeletedUserInfo).WithOne(u => u.User).HasForeignKey<DeletedUserInfo>(c => c.UserId).IsRequired();
 	        builder.HasMany(u => u.UserRoles).WithOne(u => u.User).HasForeignKey(u => u.UserId).IsRequired();

@@ -43,6 +43,21 @@ namespace Softeq.NetKit.Auth.DomainServices.Services
             return user;
         }
 
+        public async Task<User> GetUserByAppleKeyAsync(string appleKey)
+        {
+            User user;
+            try
+            {
+                user = await UnitOfWork.ReadUserRepository.GetUserByAppleKeyAsync(appleKey);
+            }
+            catch (InvalidOperationException exception)
+            {
+                throw new NetKitAuthNotFoundException(ErrorCode.UserNotFound, UserNotFoundException, exception);
+            }
+
+            return user;
+        }
+
         public async Task<string> GetUserRoleNameAsync(string userId)
         {
             try

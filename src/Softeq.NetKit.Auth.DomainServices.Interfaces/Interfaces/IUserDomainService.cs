@@ -25,5 +25,6 @@ namespace Softeq.NetKit.Auth.DomainServices.Interfaces.Interfaces
 	    Task UpdateLastAccountFailedAttemptsEmailSentDateAsync(string userId);
 		Task<User> GetUserByNameAsync(string userName);
         Task<bool> IsFirstRoleRepresentativeAsync(string userId, string role);
+        Task<User> GetUserByAppleKeyAsync(string appleKey);
     }
 }

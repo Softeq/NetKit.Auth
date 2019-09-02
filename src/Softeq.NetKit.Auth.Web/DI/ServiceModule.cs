@@ -32,6 +32,7 @@ namespace Softeq.NetKit.Auth.Web.DI
 			#endregion
 
 			builder.RegisterType<TokenService>().AsSelf();
-		}
+            builder.RegisterType<AppleService>().As<IAppleService>();
+        }
     }
 }

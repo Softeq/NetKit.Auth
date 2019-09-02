@@ -21,6 +21,11 @@ namespace Softeq.NetKit.Auth.Repository.Repositories
         {
         }
 
+        public async Task<User> GetUserByAppleKeyAsync(string appleKey)
+        {
+            return await dbset.Include(x => x.Status)
+                .SingleAsync(x => x.AppleKey == appleKey);
+        }
         public async Task<User> GetUserByIdAsync(string userId)
         {
             return await dbset.Include(x => x.Status)

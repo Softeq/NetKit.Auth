@@ -20,6 +20,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
+using Softeq.NetKit.Auth.Common.Utility.AppleHttpClient.Configuration;
+using Softeq.NetKit.Auth.Common.Utility.AppleHttpClient.Extensions.DependancyInjection;
 
 namespace Softeq.NetKit.Auth.Web.DI
 {
@@ -28,7 +30,33 @@ namespace Softeq.NetKit.Auth.Web.DI
 		protected override void Load(ContainerBuilder builder)
 		{
 			#region IntegrationServices
-            
+
+            builder.RegisterAppleHttpClient().Register(ctx =>
+            {
+                var configuration = ctx.Resolve<IConfiguration>();
+
+                var clientId = configuration[ConfigurationSettings.ClientId];
+                var redirectUri = configuration[ConfigurationSettings.RedirectUri];
+                var keyId = configuration[ConfigurationSettings.KeyId];
+                var teamId = configuration[ConfigurationSettings.TeamId];
+                var lifetime = configuration[ConfigurationSettings.Lifetime];
+                var privateKey = configuration[ConfigurationSettings.PrivateKey];
+
+                string Check(string str) => Ensure.String.IsNotEmptyOrWhitespace(str, nameof(str));
+
+                return new AppleHttpClientConfiguration
+                {
+                    ClientId = Check(clientId),
+                    RedirectUri = Check(redirectUri),
+                    KeyId = Check(keyId),
+                    TeamId = Check(teamId),
+                    Lifetime = Check(lifetime),
+                    PrivateKey = Check(privateKey)
+                };
+            }).As<AppleHttpClientConfiguration>().SingleInstance();
+
+
+
 		    builder
 		        .Register(context =>
 		        {

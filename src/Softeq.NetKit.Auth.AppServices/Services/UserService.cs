@@ -128,6 +128,11 @@ namespace Softeq.NetKit.Auth.AppServices.Services
 		    await SendResetPasswordEmailAsync(user, emailPurpose);
 	    }
 
+        public async Task<User> GetUserByAppleKeyAsync(string appleKey)
+        {
+            return await _userDomainService.GetUserByAppleKeyAsync(appleKey);
+        }
+
 	    public async Task SendChangePasswordEmailAsync(User user)
 	    {
 	        var resetPasswordToken = await _tokenProviderService.GeneratePasswordResetTokenAsync(user);

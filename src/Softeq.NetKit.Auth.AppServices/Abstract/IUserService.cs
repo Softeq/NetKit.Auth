@@ -35,5 +35,6 @@ namespace Softeq.NetKit.Auth.AppServices.Abstract
 	    Task UpdateLastPasswordExpiresEmailSentDateAsync(string userId);
 	    Task<bool> ValidateCredentialsAsync(string userName, string password);
         Task<bool> IsFirstRoleRepresentativeAsync(string userId, string role);
+        Task<User> GetUserByAppleKeyAsync(string appleKey);
     }
 }
